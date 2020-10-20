@@ -1,1 +1,2 @@
-"# kostka" 
+# Kostka
+Hra vytvořena v JS
