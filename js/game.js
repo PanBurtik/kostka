@@ -1,7 +1,8 @@
 var hody = [];
+var h = 1;
+const tlacitko = document.getElementById('tlacitko');
 
-document.getElementById('game').addEventListener('click',
-    function(){
+document.getElementById('game').addEventListener('click', function(){
         hod();
         console.log(hody);
     }
@@ -49,6 +50,6 @@ function hod() {
     document.getElementById('result').innerHTML += 
         '<p>Nejvyšší hod: ' + maximum(hody) + '</p>';
     document.getElementById('result').innerHTML += 
-        '<p>Nejvyšší hod: ' + minimum(hody) + '</p>';
+        '<p>Nenižší hod: ' + minimum(hody) + '</p>';
     return h;
 }
