@@ -1,12 +1,25 @@
 var hody = [];
-var h = 1;
-const tlacitko = document.getElementById('tlacitko');
+let timer = false;
+
+
+function animace() {
+    h = Math.ceil(Math.random() * 6);
+    cube.src = 'img/kostka' + h + '.png';
+}
 
 document.getElementById('game').addEventListener('click', function(){
+    if (!timer){
+        timer = setInterval(animace, 50);
+        document.getElementById('game').innerText ='STOP';
+    }else{
+        document.getElementById('game').innerText ='HREJ';
+        clearInterval(timer);
+        timer = false;
+        hody.push(h);
         hod();
-        console.log(hody);
     }
-);
+})
+
 
 function suma(cisla) {
     var sum = 0;
@@ -37,8 +50,7 @@ function average(sum, count) {
 }
 
 function hod() {
-    var h = Math.ceil(Math.random() * 6);
-    hody.push(h);
+
     document.getElementById('cube').src='img/kostka' + h + '.png';
     document.getElementById('result').innerHTML = '<p>Hod: ' + h + '</p>';
     document.getElementById('result').innerHTML += 
